@@ -2,14 +2,14 @@ import React from "react";
 import './SearchResult.scss'
 import { Link } from "react-router-dom";
 
-const Result = ({ props }) => {
+const Result = ({ data }) => {
     const {
         id,
         picture,
         price,
         title,
         address,
-    } = props;
+    } = data;
     return (
         <Link className='search-result'>
             <img src={picture} alt='imagen_articulo' className='main-picture' />
