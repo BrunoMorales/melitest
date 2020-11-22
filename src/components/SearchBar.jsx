@@ -9,7 +9,7 @@ const SearchBar = () => {
 
     const searchLink = searchInput ? `/items?search=${searchInput}` : '/'
     const handleType = ({ target: { value } }) => setSearchInput(value)
-    const submitOnEnter = (e) => { if (e.keyCode === 13) { routerHistory.push(searchLink)} }
+    const submitOnEnter = ({keyCode}) => { if (keyCode === 13) { routerHistory.push(searchLink)} }
 
     return (
         <div className='header'>
