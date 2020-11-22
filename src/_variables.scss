@@ -1,0 +1,44 @@
+//constants
+$meli-base: #ffe600;
+$meli-gray: #ebebeb;
+$meli-blue: #3483fa;
+$searchbar-height: 52px;
+
+//Font sizes
+$text-sm: 14px;
+$text-md: 18px;
+$text-lg: 24px;
+$text-xl: 40px;
+
+//breakpoints
+$tablet: 768px;
+$desktop: 1024px;
+$desktop-xl: 1280px;
+
+//mixins
+@mixin when-tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin when-desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin max-content-width {
+    @media (max-width: $tablet) {
+        max-width: 100%;
+    }
+    @media (min-width: $tablet) {
+        max-width: 90%;
+    }
+    @media (min-width: $desktop) {
+        max-width: 80%;
+    }
+    @media (min-width: $desktop-xl) {
+        max-width: 1280px;
+    }
+}
