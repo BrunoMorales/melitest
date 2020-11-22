@@ -5,29 +5,29 @@ import './ProductDetail.scss'
 const ProductDetail= () => {
 
     return (
-        <section>
-            <div >
-                <div >
-                    <img src={picture} />
-                    <div>
-                        <p >
+        <section className='product-detail'>
+            <div className='product-container'>
+                <div className='product-header'>
+                    <img src={picture} alt='imagen_producto' className='product-picture' />
+                    <div className='product-header-container'>
+                        <p className='product-condition'>
                             {condition} - {sold_quantity} vendidos
-                    </p>
-                        <h1 >
+                        </p>
+                        <h1 className='product-title'>
                             {title}
                         </h1>
-                        <p >
+                        <p className='product-price'>
                             $ {price}
                         </p>
-                        <button >
+                        <button className='buy-btn'>
                             Comprar
                     </button>
                     </div>
                 </div>
-                <div >
+                <div className='product-description'>
                     <h2>
                         Descripción del producto
-                    </h2>
+                </h2>
                     <p >
                         {description}
                     </p>
