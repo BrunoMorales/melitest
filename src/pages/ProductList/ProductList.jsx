@@ -8,10 +8,10 @@ const ProductList = (props) => {
     const [results, setResults] = useState([])
 
     return (
-        <section >
-            <div>
+        <section className='product-list'>
+            <div className='result-container'>
                 {results.items.slice(0, ELEMENTS_PER_PAGE).map((result, index) =>
-                    <SearchResult  key={index} />
+                    <SearchResult data={result}  key={index} />
                 )}
             </div>
         </section>
