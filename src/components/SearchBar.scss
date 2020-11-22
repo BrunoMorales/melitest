@@ -1,0 +1,52 @@
+@import "src/variables";
+
+.header {
+    position: fixed;
+    background-color: $meli-base;
+    width: 100%;
+    max-height: $searchbar-height;
+
+    .search-wrapper {
+        @include max-content-width;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        margin: 0 auto;
+        padding: 8px 10px;
+
+        .header-logo {
+            object-fit: contain;
+            margin-right: 12px;
+        }
+        .searchbar {
+            display: flex;
+            flex-grow: 1;
+            border: 1px solid $meli-gray;
+            &:focus-within {
+                box-shadow: 0 0 4px darkgray;
+            }
+
+            .search-box {
+                display: flex;
+                flex-grow: 1;
+                border: none;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                padding: 0 8px;
+                outline: none;
+            }
+            .search-button {
+                width: 40px;
+                display: flex;
+                border: 1px solid white;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                background-color: $meli-gray;
+                color: darkgray;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+            }
+        }
+    }
+}

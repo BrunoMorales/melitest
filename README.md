@@ -1,6 +1,7 @@
 # melitest
 
-Sample app with a box that searches for products, displays them and provides a detailed view.
+A MercadoLibre minimized searching page, which searches for products and shows them on a list.
+When clicked on a product from the list, it shows a details page about the product, and a breadcrumb of categories that would lead the user to it.
 
 ---
 
