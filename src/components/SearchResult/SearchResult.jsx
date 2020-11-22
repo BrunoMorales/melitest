@@ -1,5 +1,5 @@
 import React from "react";
-import './Result.scss'
+import './SearchResult.scss'
 import { Link } from "react-router-dom";
 
 const Result = ({ props }) => {
