@@ -11,7 +11,7 @@ const Result = ({ data }) => {
         address,
     } = data;
     return (
-        <Link className='search-result'>
+        <Link className='search-result'  to={{ pathname: `/items/${id}`, state: { product: data } }}>
             <img src={picture} alt='imagen_articulo' className='main-picture' />
             <div className='result-data'>
                 <div className='result-header'>
