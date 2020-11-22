@@ -10,21 +10,22 @@ const Result = ({ props }) => {
         title,
         address,
     } = props;
-
     return (
-        <Link >
-            <img src={picture} />
-                <div>
-                    <p >
-                        $ {price.amount}
+        <Link className='search-result'>
+            <img src={picture} alt='imagen_articulo' className='main-picture' />
+            <div className='result-data'>
+                <div className='result-header'>
+                    <p className='result-price'>
+                        $ {price.amount} 
                     </p>
-                    <h2 >
+                    <h2 className='result-title'>
                         {title}
                     </h2>
                 </div>
-                <p >
+                <p className='result-location'>
                     {address}
                 </p>
+            </div>
         </Link>
     )
 }

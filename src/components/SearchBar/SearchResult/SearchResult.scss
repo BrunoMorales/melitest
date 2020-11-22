@@ -1,0 +1,54 @@
+@import "src/variables";
+
+.search-result {
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid $ml-gray;
+    padding: 24px 16px;
+    align-items: stretch;
+    text-decoration: none;
+    color: black;
+
+    .main-picture {
+        object-fit: contain;
+        min-height: 100%;
+        margin-right: 16px;
+    }
+
+    .result-data {
+        width: 100%;
+        @include when-desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+        .result-header {
+            word-wrap: break-word;
+            .result-price {
+                margin: 0 0 12px 0;
+                font-size: $text-md;
+                font-weight: 600;
+            }
+            .result-title {
+                margin: 0;
+                font-weight: 400;
+                font-size: $text-md;
+                @include when-desktop {
+                    font-size: $text-lg;
+                }
+            }
+        }
+        .result-location {
+            font-size: $text-sm;
+            @include when-desktop {
+                font-size: $text-md;
+                margin: 0 48px 0 24px;
+                min-width: 20%;
+            }
+        }
+    }
+    :visited {
+        .result-title {
+            color: navy;
+        }
+    }
+}
