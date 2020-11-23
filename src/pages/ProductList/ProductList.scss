@@ -2,14 +2,12 @@
 
 .product-list {
     min-width: 100%;
-    height: 100%;
-    padding-top: $searchbar-height;
-    background-color: $meli-gray;
+    min-height: 100vh;
+    padding: $searchbar-height 0;
 
     .result-container {
         @include max-content-width;
         margin: 0 auto;
-        background-color: white;
 
         .no-result-card {
             padding: 24px 16px;
@@ -17,7 +15,6 @@
             text-align: center;
             text-decoration: none;
             color: darkgray;
-            background-color: $meli-gray;
         }
     }
 }
