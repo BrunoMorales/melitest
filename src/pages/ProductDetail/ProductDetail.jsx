@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from 'react'
 import './ProductDetail.scss'
 import fetchProduct from '../../utils/fetchProduct'
+import Breadcrumb from '../../components/Breadcrumb'
 
 const ProductDetail= (props) => {
     const productId = props.location?.pathname.slice(7)
@@ -17,6 +18,7 @@ const ProductDetail= (props) => {
 
     return (
         <section className='product-detail'>
+            <Breadcrumb categoryId={product?.category}/>
             <div className='product-container'>
                 <div className='product-header'>
                     <img src={product?.picture} alt='imagen_producto' className='product-picture' />
