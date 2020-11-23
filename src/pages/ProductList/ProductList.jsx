@@ -14,7 +14,7 @@ const ProductList = (props) => {
         params ?
             fetchResults(params)
                 .then((res) => {
-                    setResults(res)
+                    setResults(res.items)
                 })
             :
             setResults(undefined)
@@ -24,9 +24,15 @@ const ProductList = (props) => {
         <section className='product-list'>
             <Breadcrumb categoryId={results?.category_id}/>
             <div className='result-container'>
-                {results?.items.slice(0, ELEMENTS_PER_PAGE).map((result, index) =>
+                {results?.length > 1 ? 
+                results.slice(0, ELEMENTS_PER_PAGE).map((result, index) =>
                     <SearchResult data={result}  key={index} />
-                )}
+                )
+                :
+                <div className='no-result-card'>
+                    No se encontró ningún resultado
+                </div>
+            }
             </div>
         </section>
     )

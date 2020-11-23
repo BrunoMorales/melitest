@@ -12,6 +12,8 @@
     .main-picture {
         object-fit: contain;
         min-height: 100%;
+        min-width: 100px;
+        max-width: 100px;
         margin-right: 16px;
     }
 
@@ -27,6 +29,14 @@
                 margin: 0 0 12px 0;
                 font-size: $text-md;
                 font-weight: 600;
+                .free-shipping {
+                    display: inline-block;
+                    height: 12px;
+                    width: 12px;
+                    background-color: green;
+                    border-radius: 100%;
+                    margin-left: 4px;
+                }
             }
             .result-title {
                 margin: 0;
