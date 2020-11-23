@@ -9,6 +9,7 @@ const Result = ({ data }) => {
         price,
         title,
         address,
+        free_shipping
     } = data;
     return (
         <Link className='search-result'  to={{ pathname: `/items/${id}`, state: { product: data } }}>
@@ -16,7 +17,7 @@ const Result = ({ data }) => {
             <div className='result-data'>
                 <div className='result-header'>
                     <p className='result-price'>
-                        $ {price.amount} 
+                        $ {price.amount}  {free_shipping && <span className='free-shipping' />}
                     </p>
                     <h2 className='result-title'>
                         {title}
