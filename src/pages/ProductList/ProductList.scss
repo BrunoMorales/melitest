@@ -10,5 +10,14 @@
         @include max-content-width;
         margin: 0 auto;
         background-color: white;
+
+        .no-result-card {
+            padding: 24px 16px;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: darkgray;
+            background-color: $meli-gray;
+        }
     }
 }
