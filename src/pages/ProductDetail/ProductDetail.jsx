@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react'
 import './ProductDetail.scss'
 import fetchProduct from '../../utils/fetchProduct'
 import Breadcrumb from '../../components/Breadcrumb'
+import { formatPrice } from '../../utils/formatters'
 
 const ProductDetail= (props) => {
     const productId = props.location?.pathname.slice(7)
@@ -30,7 +31,7 @@ const ProductDetail= (props) => {
                             {product?.title}
                         </h1>
                         <p className='product-price'>
-                            $ {product?.price?.amount}
+                            $ {formatPrice(product?.price?.amount)}
                         </p>
                         <button className='buy-btn'>
                             Comprar

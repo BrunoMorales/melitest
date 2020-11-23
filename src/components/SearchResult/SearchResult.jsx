@@ -1,6 +1,7 @@
 import React from "react";
 import './SearchResult.scss'
 import { Link } from "react-router-dom";
+import { formatPrice } from "../../utils/formatters";
 
 const Result = ({ data }) => {
     const {
@@ -17,7 +18,7 @@ const Result = ({ data }) => {
             <div className='result-data'>
                 <div className='result-header'>
                     <p className='result-price'>
-                        $ {price.amount}  {free_shipping && <span className='free-shipping' />}
+                        $ {formatPrice(price.amount)} {free_shipping && <span className='free-shipping' />}
                     </p>
                     <h2 className='result-title'>
                         {title}
