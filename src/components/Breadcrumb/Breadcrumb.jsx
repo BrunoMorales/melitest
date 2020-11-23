@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './Breadcrumb.scss'
 import fetchCategoryPath from '../../utils/fetchCategoryPath'
+import  {FaChevronRight}  from 'react-icons/fa'
 
 const Breadcrumb = ({categoryId}) => {
     const [breadcrumb, setBreadcrumb] = useState()
@@ -11,12 +12,15 @@ const Breadcrumb = ({categoryId}) => {
     })
 
     return (
-        <nav>
+        <nav className='breadcrumb'>
             {breadcrumb?.map(
-                (category, index)=>(
-                        <Link key={index} to={`/items?search=${category.name}`}>
-                            {category.name}
-                        </Link>
+                (category, index)=>( 
+                <Fragment key={index}>
+                    {index > 0 && <FaChevronRight className='category-divider'/>}
+                    <Link to={`/items?search=${category.name}`} className='breadcrumb-link'>
+                        {category.name}
+                    </Link>
+                </Fragment>
                 )
             )}
         </nav>  
