@@ -2,6 +2,7 @@ import React, {  useEffect, useState } from "react";
 import './ProductList.scss'
 import SearchResult from "../../components/SearchResult";
 import fetchResults from "../../utils/fetchResults"
+import Breadcrumb from '../../components/Breadcrumb'
 
 const ELEMENTS_PER_PAGE = 4
 
@@ -21,6 +22,7 @@ const ProductList = (props) => {
 
     return (
         <section className='product-list'>
+            <Breadcrumb categoryId={results?.category_id}/>
             <div className='result-container'>
                 {results?.items.slice(0, ELEMENTS_PER_PAGE).map((result, index) =>
                     <SearchResult data={result}  key={index} />
