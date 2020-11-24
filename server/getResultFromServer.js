@@ -7,7 +7,7 @@ const buildBaseItem = require('./buildBaseItem')
 
 const getResultsFromServer = (req, res) => {
     const { q } = req.query;
-    fetch(`${API}/sites/MLA/search?q=${q}`)
+    fetch(`${API}/sites/MLA/search?q=${decodeURIComponent(q)}`)
         .then(res => res.json())
         .then(data => {
             const results = buildResultsPayload(data)
