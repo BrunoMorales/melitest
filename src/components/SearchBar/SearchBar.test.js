@@ -1,11 +1,10 @@
-import { render, fireEvent } from '@testing-library/react'
-import {  MemoryRouter, useLocation, Route } from 'react-router-dom'
+import { render, fireEvent, screen } from '@testing-library/react'
+import {  MemoryRouter,  Route } from 'react-router-dom'
 import SearchBar from "./SearchBar"
 
-const setUp = (initialEntry) => {
+const renderWrapper = (initialEntry) => {
     let  routeName = {};
-
-    const rendered = render(
+    render(
         <MemoryRouter initialEntries={[initialEntry]}>
             <SearchBar />
             <Route path='/items'
@@ -20,59 +19,45 @@ const setUp = (initialEntry) => {
               }}/>
         </MemoryRouter>
         )
-        return {rendered, routeName }
+    return routeName 
 }
 
+const userSearch = 'el juego'
 
 describe('Searchbar displays and searches properly', ()=>{
     it('Renders the searchbar, with an image, a search box and a search button.', ()=>{
-        const { rendered} = setUp('/')
-        const {getByRole}=rendered
-        const searchLogo = getByRole("search-logo")
-        const searchBtn = getByRole("search-btn")
-        const searchBox = getByRole("search-box")
-        expect(searchBox).not.toBeNull()
-        expect(searchLogo).not.toBeNull()
-        expect(searchBtn).not.toBeNull()
+        renderWrapper('/')
+        const searchLogo = screen.getByRole("img")
+        const searchBtn = screen.getByTestId('search-btn')
+        const searchBox = screen.getByRole("textbox")
+        expect(searchBox).toBeInTheDocument()
+        expect(searchLogo).toBeInTheDocument()
+        expect(searchBtn).toBeInTheDocument()
     })
     it('Redirects to a product list page for whatever the user wrote in box, when enter is pressed.', ()=>{
-        const userSearch = 'lego'
-        const {rendered, routeName} = setUp('/')
-
-        const { getByRole } = rendered
-        
-        const searchBox = getByRole("search-box")
-        const searchBtn = getByRole("search-btn")
-
+        const routeName = renderWrapper('/')
+        const searchBtn = screen.getByTestId('search-btn')
+        const searchBox = screen.getByRole("textbox")
         fireEvent.change(searchBox, {target: {value: userSearch}})
         searchBox.focus()
         fireEvent.keyDown(searchBox, {target: {keycode: 13}})
         fireEvent.click(searchBtn)
-      
         expect(routeName.location.pathname).toBe(`/items`)
         expect(routeName.location.search).toBe(`?search=${userSearch}`)
     })
-    it('Redirects to a product list page for whatever the user wrote in box, when search button is clicked.', async ()=>{
-        const userSearch = 'lego'
-        const {rendered, routeName} = setUp('/')
-
-        const { getByRole } = rendered
-        
-        const searchBox = getByRole("search-box")
-        const searchBtn = getByRole("search-btn")
-
+    it('Redirects to a product list page for whatever the user wrote in box, when search button is clicked.', ()=>{
+        const routeName = renderWrapper('/')
+        const searchBtn = screen.getByTestId('search-btn')
+        const searchBox = screen.getByRole("textbox")
         fireEvent.change(searchBox, {target: {value: userSearch}})
         fireEvent.click(searchBtn)
-      
         expect(routeName.location.pathname).toBe(`/items`)
         expect(routeName.location.search).toBe(`?search=${userSearch}`)
     })
     it('Redirects to main page when logo is clicked.', ()=>{
-       const { routeName, rendered} = setUp('/items')
-       const {getByRole}= rendered
-       const searchLogo = getByRole('search-logo')
+        const routeName = renderWrapper('/items')
+        const searchLogo = screen.getByRole('img')
         fireEvent.click(searchLogo)
-         
         expect(routeName.location.pathname).toBe('/')
     })
 })
