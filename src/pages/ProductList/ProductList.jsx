@@ -3,6 +3,7 @@ import './ProductList.scss'
 import SearchResult from "../../components/SearchResult";
 import fetchResults from "../../apis/fetchResults"
 import Breadcrumb from '../../components/Breadcrumb'
+import NotFound from "../../components/NotFound";
 
 const ELEMENTS_PER_PAGE = 4
 
@@ -20,22 +21,21 @@ const ProductList = (props) => {
             setResults(undefined)
     }, [params])
 
-    return (
+    return results?.length > 1 ? 
         <section className='product-list'>
             <Breadcrumb categoryId={results?.category_id}/>
             <div className='result-container'>
-                {results?.length > 1 ? 
+            {
                 results.slice(0, ELEMENTS_PER_PAGE).map((result, index) =>
                     <SearchResult data={result}  key={index} />
                 )
-                :
-                <div className='no-result-card'>
-                    No se encontró ningún resultado
-                </div>
             }
             </div>
         </section>
-    )
+                :
+                <NotFound >
+                    No se encontró ningún resultado
+                </NotFound >
 }
 
 export default ProductList
