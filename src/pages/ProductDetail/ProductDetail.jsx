@@ -4,6 +4,7 @@ import './ProductDetail.scss'
 import fetchProduct from '../../apis/fetchProduct'
 import Breadcrumb from '../../components/Breadcrumb'
 import { formatPrice } from '../../utils/formatters'
+import NotFound from '../../components/NotFound'
 
 const ProductDetail= (props) => {
     const productId = props.location?.pathname.slice(7)
@@ -20,6 +21,7 @@ const ProductDetail= (props) => {
     return (
         <section className='product-detail'>
             <Breadcrumb categoryId={product?.category}/>
+            {product ?
             <div className='product-container'>
                 <div className='product-header'>
                     <img src={product?.picture} alt='imagen_producto' className='product-picture' />
@@ -46,7 +48,12 @@ const ProductDetail= (props) => {
                         {product?.description}
                     </p>
                 </div>
-            </div>
+            </div> 
+            :
+            <NotFound >
+            No se encontró el producto que estás buscando
+            </NotFound>
+}
         </section>
     )
 }

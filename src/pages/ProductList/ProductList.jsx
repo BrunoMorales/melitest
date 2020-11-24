@@ -3,6 +3,7 @@ import './ProductList.scss'
 import SearchResult from "../../components/SearchResult";
 import fetchResults from "../../apis/fetchResults"
 import Breadcrumb from '../../components/Breadcrumb'
+import NotFound from "../../components/NotFound";
 
 const ELEMENTS_PER_PAGE = 4
 
@@ -29,9 +30,9 @@ const ProductList = (props) => {
                     <SearchResult data={result}  key={index} />
                 )
                 :
-                <div className='no-result-card'>
+                <NotFound >
                     No se encontró ningún resultado
-                </div>
+                </NotFound >
             }
             </div>
         </section>
