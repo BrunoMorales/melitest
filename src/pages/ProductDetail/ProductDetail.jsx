@@ -1,7 +1,7 @@
 
 import React, {useEffect, useState} from 'react'
 import './ProductDetail.scss'
-import fetchProduct from '../../utils/fetchProduct'
+import fetchProduct from '../../apis/fetchProduct'
 import Breadcrumb from '../../components/Breadcrumb'
 import { formatPrice } from '../../utils/formatters'
 

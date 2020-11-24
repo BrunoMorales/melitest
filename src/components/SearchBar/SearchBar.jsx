@@ -16,7 +16,7 @@ const SearchBar = () => {
         <div className='header'>
             <div className='search-wrapper'>
                 <Link to='/' >
-                    <img alt='meli_logo' className='header-logo'
+                    <img alt='meli_logo' className='search-logo'
                         src='https://http2.mlstatic.com/frontend-assets/ui-navigation/5.6.0/mercadolibre/logo__small.png' onClick={clearSearchbox} 
                     />
                 </Link>
@@ -27,8 +27,8 @@ const SearchBar = () => {
                         placeholder='Nunca dejes de buscar'
                         className='search-box'
                         onKeyDown={submitOnEnter} />
-                    <Link to={searchLink} className='search-button'>
-                        <FaSearch/>
+                    <Link to={searchLink} className='search-btn' data-testid='search-btn'>
+                        <FaSearch alt='boton-buscar' />
                     </Link>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React, {  useEffect, useState } from "react";
 import './ProductList.scss'
 import SearchResult from "../../components/SearchResult";
-import fetchResults from "../../utils/fetchResults"
+import fetchResults from "../../apis/fetchResults"
 import Breadcrumb from '../../components/Breadcrumb'
 
 const ELEMENTS_PER_PAGE = 4

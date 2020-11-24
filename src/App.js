@@ -8,16 +8,13 @@ import './App.scss'
 function App() {
   return (
     <BrowserRouter>
-    <SearchBar />
-    <div  className='App-wrapper'>
-
-    <Switch>
-      <Route path='/items/:id' component={ProductDetail} />
-      <Route path='/items' component={ProductList} />
-      <Route path='/' />
-    </Switch>
-    </div>
-  </BrowserRouter >
+      <SearchBar />
+      <Switch>
+        <Route path='/items/:id' component={ProductDetail} />
+        <Route path='/items' component={ProductList} />
+        <Route path='/' />
+      </Switch>
+    </BrowserRouter >
   );
 }
 
