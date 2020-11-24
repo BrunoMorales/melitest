@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './Breadcrumb.scss'
-import fetchCategoryPath from '../../utils/fetchCategoryPath'
+import fetchCategoryPath from '../../apis/fetchCategoryPath'
 import  {FaChevronRight}  from 'react-icons/fa'
 
 const Breadcrumb = ({categoryId}) => {
