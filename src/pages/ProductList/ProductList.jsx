@@ -21,22 +21,21 @@ const ProductList = (props) => {
             setResults(undefined)
     }, [params])
 
-    return (
+    return results?.length > 1 ? 
         <section className='product-list'>
             <Breadcrumb categoryId={results?.category_id}/>
             <div className='result-container'>
-                {results?.length > 1 ? 
+            {
                 results.slice(0, ELEMENTS_PER_PAGE).map((result, index) =>
                     <SearchResult data={result}  key={index} />
                 )
+            }
+            </div>
+        </section>
                 :
                 <NotFound >
                     No se encontró ningún resultado
                 </NotFound >
-            }
-            </div>
-        </section>
-    )
 }
 
 export default ProductList

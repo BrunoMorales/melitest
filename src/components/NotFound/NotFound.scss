@@ -1,5 +1,9 @@
+@import "src/variables";
+
 .not-found {
-    padding: 24px 0;
+    @include max-content-width;
+    padding: $searchbar-height + 48 8px;
+    margin: 0 auto;
     align-items: center;
     text-align: center;
     color: darkgray;

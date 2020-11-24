@@ -18,10 +18,9 @@ const ProductDetail= (props) => {
                 )
     }, [productId])
 
-    return (
+    return product ?
         <section className='product-detail'>
             <Breadcrumb categoryId={product?.category}/>
-            {product ?
             <div className='product-container'>
                 <div className='product-header'>
                     <img src={product?.picture} alt='imagen_producto' className='product-picture' />
@@ -49,13 +48,12 @@ const ProductDetail= (props) => {
                     </p>
                 </div>
             </div> 
+        </section>
             :
             <NotFound >
             No se encontró el producto que estás buscando
             </NotFound>
-}
-        </section>
-    )
+    
 }
 
 export default ProductDetail
