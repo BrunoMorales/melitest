@@ -10,8 +10,7 @@ function App() {
   return (
     <BrowserRouter >
     <div className='App-wrapper'>
-
-      <SearchBar />
+    <Route path='*' component={SearchBar} />
       <Switch >
         <Route exact path='/' >
           <NotFound>

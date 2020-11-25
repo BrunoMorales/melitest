@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import  {FaSearch}  from 'react-icons/fa'
 import './SearchBar.scss'
 
-const SearchBar = () => {
-    const [searchInput, setSearchInput] = useState('')
+const SearchBar = (props) => {
+    const params = props.location?.search.slice(8)
+    const [searchInput, setSearchInput] = useState(params)
     const routerHistory = useHistory()
+
+    useEffect(()=>{setSearchInput(params)}, [params])
 
     const searchLink = searchInput ? `/items?search=${searchInput}` : '/'
     const handleType = ({ target: { value } }) => setSearchInput(value)
