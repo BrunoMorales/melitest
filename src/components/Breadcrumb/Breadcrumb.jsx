@@ -9,7 +9,7 @@ const Breadcrumb = ({categoryId}) => {
     useEffect(()=> {
         fetchCategoryPath(categoryId)
         .then((res)=>setBreadcrumb(res))
-    })
+    }, [])
 
     return (
         <nav className='breadcrumb'>
