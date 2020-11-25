@@ -40,15 +40,7 @@ export const dummySearchResults = {
             title: 'Illidan',
             address: 'Dark Temple',
             free_shipping: true
-        },
-        {
-            id: 'MLA751637005',
-            picture: 'http://http2.mlstatic.com/D_670843-MLA43242304728_082020-I.jpg',
-            price: { amount: 69 },
-            title: 'Dr. Freeman',
-            address: 'Unknown',
-            free_shipping: false
-        },
+        }
     ]
 }
 

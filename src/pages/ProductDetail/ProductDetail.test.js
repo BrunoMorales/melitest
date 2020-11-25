@@ -1,6 +1,5 @@
 import ProductDetail from './ProductDetail'
 import { act, render, screen } from '@testing-library/react'
-import { formatPrice } from '../../utils/formatters'
 import { MemoryRouter, Route } from 'react-router-dom';
 import {dummyProduct} from '../../apis/__mocks__/dummies'
 
