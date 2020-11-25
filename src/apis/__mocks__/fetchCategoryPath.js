@@ -1,7 +1,6 @@
 import { dummyCategoryPath } from './dummies'
 
-const fetchCategoryPath = () => {
-    return Promise.resolve(dummyCategoryPath)
-}
+const fetchCategoryPath = () =>  Promise.resolve(dummyCategoryPath)
+
 
 export default fetchCategoryPath

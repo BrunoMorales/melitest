@@ -59,8 +59,8 @@ export const dummyProduct = {
     }
 
 export const dummyCategoryPath = [
-    {id: "MLA1403", name: "Alimentos y Bebidas"},
+    {id: "MLA1403", name: "Alimentos"},
     {id: "MLA178700", name: "Bebidas"},
-    {id: "MLA194523", name: "Vinos y Espumantes"},
-    {id: "MLA1404", name: "Vinos"},
+    {id: "MLA194523", name: "Vinos"},
+    {id: "MLA1404", name: "Espumantes"},
 ]
