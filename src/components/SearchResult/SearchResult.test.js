@@ -2,15 +2,8 @@ import { render, fireEvent, screen } from '@testing-library/react'
 import { MemoryRouter, Route } from 'react-router-dom'
 import SearchResult from './SearchResult'
 import {formatPrice} from '../../utils/formatters'
+import { dummyResult } from '../../../__mocks__/dummies'
 
-const dummyResult = {
-    id: 'MLA869866318',
-    picture: 'http://http2.mlstatic.com/D_670843-MLA43242304728_082020-I.jpg',
-    price: { amount: 3000 },
-    title: 'El Juego',
-    address: 'Somewhere over the rainbox.',
-    free_shipping: true
-}
 
 const renderWrapper = () => {
     let routeName = {}
